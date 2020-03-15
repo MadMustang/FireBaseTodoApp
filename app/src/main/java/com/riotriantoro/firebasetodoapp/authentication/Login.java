@@ -21,6 +21,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.riotriantoro.firebasetodoapp.MainActivity;
 import com.riotriantoro.firebasetodoapp.R;
 
+import java.util.Objects;
+
 /**
  * Log-in Page
  * @author Rionaldy Triantoro
@@ -108,7 +110,8 @@ public class Login extends AppCompatActivity {
                                             MainActivity.class));
                                     finish();
                                 } else {
-                                    Log.d(LOG_TAG, "Login failed");
+                                    Log.d(LOG_TAG, "Login failed. Error: " +
+                                            Objects.requireNonNull(task.getException()).getMessage());
                                     Toast.makeText(Login.this, "Login Failed",
                                             Toast.LENGTH_SHORT).show();
                                 }

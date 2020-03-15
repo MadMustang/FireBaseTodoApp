@@ -132,16 +132,16 @@ public class Register extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
-                                    Log.d(LOG_TAG, "create user successful");
-                                    Toast.makeText(Register.this, "User created.",
+                                    Log.d(LOG_TAG, "Create user successful");
+                                    Toast.makeText(Register.this, "User created",
                                             Toast.LENGTH_SHORT).show();
                                     startActivity(new Intent(getApplicationContext(),
                                             MainActivity.class));
                                     finish();
                                 } else {
-                                    Log.d(LOG_TAG, "create user failed");
-                                    Toast.makeText(Register.this, "Error: " +
-                                            Objects.requireNonNull(task.getException()).getMessage(),
+                                    Log.d(LOG_TAG, "Create user failed. Error: " +
+                                            Objects.requireNonNull(task.getException()).getMessage());
+                                    Toast.makeText(Register.this, "Create user failed",
                                             Toast.LENGTH_SHORT).show();
                                 }
                             }
