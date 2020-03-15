@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">To-Do App</string>
+
+    <!-- Register/Login Page-->
+    <string name="SignUpText">Welcome!</string>
+    <string name="SignInText">Hi!</string>
+    <string name="UserNameInput">Email</string>
+    <string name="PasswordInput">Password</string>
+    <string name="ConfirmPassword">Confirm Password</string>
+    <string name="SignUpButton">Sign Up</string>
+    <string name="SignInButton">Sign In</string>
+    <string name="LoginRedirect">Already registered? Sign-in here</string>
+    <string name="RegisterRedirect">New? Register here!</string>
+</resources>
