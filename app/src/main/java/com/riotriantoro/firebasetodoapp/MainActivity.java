@@ -33,7 +33,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Log.d(LOG_TAG, "Create view");
+
+        // ------------------------- Non default -----------------------------------
+        Log.d(LOG_TAG, "Create main view");
         logout = findViewById(R.id.button);
         // Initialize firebase auth
         mAuth = FirebaseAuth.getInstance();
@@ -54,11 +56,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+        Log.d(LOG_TAG, "App Starting...");
 
         // Check if user is signed-in
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser == null) {
-            Log.d(LOG_TAG, "On start");
+            Log.d(LOG_TAG, "No user logged-in. Switching to log-in mode");
             startActivity(new Intent(getApplicationContext(), Login.class));
         }
     }

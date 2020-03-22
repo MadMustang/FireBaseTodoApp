@@ -110,10 +110,12 @@ public class Login extends AppCompatActivity {
                                             MainActivity.class));
                                     finish();
                                 } else {
-                                    Log.d(LOG_TAG, "Login failed. Error: " +
-                                            Objects.requireNonNull(task.getException()).getMessage());
-                                    Toast.makeText(Login.this, "Login Failed",
+                                    String errorMessage = Objects.
+                                            requireNonNull(task.getException()).getMessage();
+                                    Log.d(LOG_TAG, "Login failed. Error: " + errorMessage);
+                                    Toast.makeText(Login.this, errorMessage,
                                             Toast.LENGTH_SHORT).show();
+                                    progressBar.setVisibility(View.INVISIBLE);
                                 }
                             }
                         });

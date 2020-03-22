@@ -139,10 +139,13 @@ public class Register extends AppCompatActivity {
                                             MainActivity.class));
                                     finish();
                                 } else {
+                                    String errorMessage = Objects.
+                                            requireNonNull(task.getException()).getMessage();
                                     Log.d(LOG_TAG, "Create user failed. Error: " +
-                                            Objects.requireNonNull(task.getException()).getMessage());
-                                    Toast.makeText(Register.this, "Create user failed",
+                                            errorMessage);
+                                    Toast.makeText(Register.this, errorMessage,
                                             Toast.LENGTH_SHORT).show();
+                                    registerProgressBar.setVisibility(View.INVISIBLE);
                                 }
                             }
                         });
